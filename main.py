@@ -8,8 +8,8 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import
 
 URL = 'https://www.instagram.com/accounts/login/'
-USERNAME = 'Icone_graphics'
-PWD = 'nXU@V5bJaN38r-g'
+USERNAME = ''
+PWD = ''
 TARGET_ACCOUNT = 'https://www.instagram.com/logo.superb/'
 chrome_driver_path = 'C:\Development\chromedriver_win32\chromedriver.exe'
 caps = DesiredCapabilities().CHROME
