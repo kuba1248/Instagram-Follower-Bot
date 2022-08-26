@@ -60,14 +60,17 @@ class InstaFollower:
             time.sleep(2)
 
     def follow(self):
-        follow_btns = self.driver.find_elements(By.XPATH,
-                                                "//li[contains(@class, '_aaei')]//button[@class='_acan _acap _acas']")
-        # To follow each follower in the pop-up.
-        for button in follow_btns:
-            try:
+        follow_buttons = self.driver.find_elements(By.CSS_SELECTOR, "button ._aacl")
+        # print(follow_buttons)
+        follow_txt = [btn.text for btn in follow_buttons]
+        print(follow_txt)
+
+        for button in follow_buttons[2:]:
+            print(button.text)
+
+            if button.text == "Follow":
                 button.click()
-                print('clicked!!!!!')
-                time.sleep(1)
+                sleep(2)
             except ElementClickInterceptedException:
                 turn_off_notifications = self.driver.find_element(By.XPATH, '/html/body')
                 turn_off_notifications.send_keys(Keys.TAB + Keys.ENTER)
